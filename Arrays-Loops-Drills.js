@@ -20,13 +20,49 @@ reasons, you are not allowed to use Math.max or Math.min.
 */
 
 function max(numbers) {
+  // Checks for if the array is empty | If its empty than will return undefined 
+  if (numbers.length === 0){
+    return undefined;
+  }  
 
+  // To Hold the value for max number
+  let maxNum = 0;
+
+  // Will loop through the length of the arrays
+  for (let i=0; i <= numbers.length; i++){
+    // Checks for the higher number and if true than will replace the current max number value
+    if(numbers[i] > maxNum){
+      maxNum = numbers[i];
+    }
+  }
+  // Returns the new max number
+  return maxNum;
 }
   
 function min(numbers) {
+  // Checks for if the array is empty | If its empty than will return undefined
+  if (numbers.length === 0){
+    return undefined;
+  }  
 
+  // To Hold the value for min number
+  let minNum = 0;
+  
+  // Will loop through the length of the arrays
+  for (let i=0; i <= numbers.length; i++){
+    // Checks for the lower number and if true than will replace the current min number value
+    if(numbers[i] < minNum){
+      minNum = numbers[i];
+    }
+  }
+  // Returns the new min number
+  return minNum;
 }
 
+const numbersMaxMin = [10,20,30,40,50,60,70,80,90,100];
+
+max(numbersMaxMin);
+min(numbersMaxMin);
 
 /* Compute the average
 
@@ -39,8 +75,19 @@ and then divide the resulting value by the number of items in the list.
 */
 
 function average(numbers) {
+  
+  let sum = numbers[0];
 
+  for (let i = 1; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  return sum / numbers.length;
 }
+
+const myNumbers = [1,2,3,4,5,6,7,8,9,10];
+
+average(myNumbers); // 5.5
 
 /* FizzBuzz
 
@@ -63,5 +110,21 @@ So, for instance, if it gets called like this: fizzBuzz(15), it should return:
 */
 
 function fizzBuzz(countTo) {
-    
+  const result = [];
+
+  for (let i = 1; i <= countTo; i++){
+    if (i % 15 === 0){
+      result.push('fizzbuzz');
+    }
+    else if (i % 5 === 0){
+      result.push('buzz');
+    }
+    else if (i % 3 === 0){
+      result.push('fizz');
+    }
+    else{
+      result.push(i);
+    }
+  }
+  return result;
 }
