@@ -96,7 +96,3 @@ need to use the array .find method described in the previous assignment.
 function divisibleBy5(array) {
     return array.find(num => num % 5 === 0);
 }
-
-  
-
-  
